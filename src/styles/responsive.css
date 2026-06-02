@@ -36,19 +36,21 @@
 /* ── Safe bottom padding for floating widget clearance ──────────────── */
 .page { padding-bottom: 100px; }
 
-/* ── Mobile nav overlay ─────────────────────────────────────────────── */
+/* MOBILE NAV OVERLAY */
 .mobile-nav-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(6,26,68,.5);
-  z-index: 300;
+  background: rgba(6, 26, 68, 0.5);
+  z-index: 3000;
   backdrop-filter: blur(2px);
 }
 
-.mobile-nav-overlay.open { display: block; }
+.mobile-nav-overlay.open {
+  display: block;
+}
 
-/* Mobile hamburger button */
+/* HAMBURGER BUTTON */
 .mobile-menu-btn {
   display: none;
   align-items: center;
@@ -60,27 +62,41 @@
   cursor: pointer;
   border-radius: 10px;
   flex-shrink: 0;
-  transition: background .15s;
 }
-.mobile-menu-btn:hover { background: #F5FAFD; }
 
-/* Sidebar mobile drawer */
+.mobile-menu-btn:hover {
+  background: #F5FAFD;
+}
+
+/* MOBILE DRAWER */
 .sidebar-drawer {
   position: fixed;
-  left: -280px;
+  left: -290px;
   top: 0;
   bottom: 0;
-  width: 260px;
-  z-index: 400;
-  transition: left .25s cubic-bezier(.4,0,.2,1);
+  width: 270px;
+  z-index: 4000;
+  background: #ffffff;
   box-shadow: none;
+  transition: left 0.25s cubic-bezier(.4,0,.2,1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
 }
+
 .sidebar-drawer.open {
   left: 0;
   box-shadow: 4px 0 24px rgba(6,26,68,.18);
 }
 
-/* Sidebar close button (mobile only) */
+.mobile-sidebar-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CLOSE BUTTON */
 .sidebar-close-btn {
   display: none;
   position: absolute;
@@ -94,6 +110,33 @@
   height: 30px;
   align-items: center;
   justify-content: center;
+  z-index: 5;
+}
+
+/* MOBILE RULES */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .sidebar-close-btn {
+    display: flex;
+  }
+
+  .sidebar-desktop-only {
+    display: none !important;
+  }
+
+  .sidebar-drawer .sidebar {
+    display: flex !important;
+    position: static !important;
+    height: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    padding-top: 46px !important;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -137,7 +180,6 @@
   }
 
   /* Layout shell */
-  .sidebar { display: none; }  /* replaced by drawer */
   .mobile-menu-btn { display: flex; }
   .sidebar-close-btn { display: flex; }
 
@@ -402,7 +444,6 @@
    MOBILE NAV SIDEBAR DRAWER
    ══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .sidebar { display: none; }
   .sidebar-drawer { display: flex; flex-direction: column; }
 }
 
@@ -483,5 +524,16 @@
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
-  .sidebar-desktop-only { display: none; }
+  .sidebar-desktop-only { display: none !important; }
+
+  /* Show the sidebar's contents when it lives inside the slide-in drawer */
+  .sidebar-drawer .sidebar {
+    display: flex !important;
+    position: static;
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+    border-right: none;
+    box-shadow: none;
+  }
 }
