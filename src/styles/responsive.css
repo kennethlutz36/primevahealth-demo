@@ -36,21 +36,19 @@
 /* ── Safe bottom padding for floating widget clearance ──────────────── */
 .page { padding-bottom: 100px; }
 
-/* MOBILE NAV OVERLAY */
+/* ── Mobile nav overlay ─────────────────────────────────────────────── */
 .mobile-nav-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(6, 26, 68, 0.5);
-  z-index: 3000;
+  background: rgba(6,26,68,.5);
+  z-index: 300;
   backdrop-filter: blur(2px);
 }
 
-.mobile-nav-overlay.open {
-  display: block;
-}
+.mobile-nav-overlay.open { display: block; }
 
-/* HAMBURGER BUTTON */
+/* Mobile hamburger button */
 .mobile-menu-btn {
   display: none;
   align-items: center;
@@ -62,41 +60,27 @@
   cursor: pointer;
   border-radius: 10px;
   flex-shrink: 0;
+  transition: background .15s;
 }
+.mobile-menu-btn:hover { background: #F5FAFD; }
 
-.mobile-menu-btn:hover {
-  background: #F5FAFD;
-}
-
-/* MOBILE DRAWER */
+/* Sidebar mobile drawer */
 .sidebar-drawer {
   position: fixed;
-  left: -290px;
+  left: -280px;
   top: 0;
   bottom: 0;
-  width: 270px;
-  z-index: 4000;
-  background: #ffffff;
+  width: 260px;
+  z-index: 400;
+  transition: left .25s cubic-bezier(.4,0,.2,1);
   box-shadow: none;
-  transition: left 0.25s cubic-bezier(.4,0,.2,1);
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
 }
-
 .sidebar-drawer.open {
   left: 0;
   box-shadow: 4px 0 24px rgba(6,26,68,.18);
 }
 
-.mobile-sidebar-content {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* CLOSE BUTTON */
+/* Sidebar close button (mobile only) */
 .sidebar-close-btn {
   display: none;
   position: absolute;
@@ -110,33 +94,6 @@
   height: 30px;
   align-items: center;
   justify-content: center;
-  z-index: 5;
-}
-
-/* MOBILE RULES */
-@media (max-width: 768px) {
-  .mobile-menu-btn {
-    display: flex;
-  }
-
-  .sidebar-close-btn {
-    display: flex;
-  }
-
-  .sidebar-desktop-only {
-    display: none !important;
-  }
-
-  .sidebar-drawer .sidebar {
-    display: flex !important;
-    position: static !important;
-    height: 100% !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    border-right: none !important;
-    box-shadow: none !important;
-    padding-top: 46px !important;
-  }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -179,7 +136,9 @@
     --fab-right:   16px;
   }
 
-  /* Layout shell */
+  /* Layout shell — desktop sidebar is hidden via the .sidebar-desktop-only
+     wrapper. Do NOT blanket-hide .sidebar here, or the drawer's sidebar
+     (which reuses the .sidebar class) goes blank. */
   .mobile-menu-btn { display: flex; }
   .sidebar-close-btn { display: flex; }
 
@@ -535,54 +494,5 @@
     min-width: 0;
     border-right: none;
     box-shadow: none;
-  }
-}
-/* ── Prevent horizontal scroll on mobile ──────────────────────────── */
-@media (max-width: 768px) {
-  html, body, #root {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-    position: relative;
-  }
-
-  /* Parked drawer must not add page width */
-  .sidebar-drawer {
-    visibility: hidden;
-    left: -320px !important;
-  }
-  .sidebar-drawer.open {
-    visibility: visible;
-    left: 0 !important;
-  }
-
-  /* Floating widgets clamped inside the screen */
-  .ai-widget, .inbox-fab-container {
-    right: 16px !important;
-    left: auto !important;
-    max-width: calc(100vw - 32px);
-  }
-
-  /* Belt-and-suspenders: nothing wider than the viewport */
-  .page, .topbar { max-width: 100vw; overflow-x: hidden; }
-}
-/* ── Force all content to fit mobile width ────────────────────────── */
-@media (max-width: 768px) {
-  /* Cards and major containers never exceed the screen */
-  .card, .card-sm, .metric-card, .hero-card,
-  .overview-ai-grid, .overview-2col, .today-2col,
-  .page > div {
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Grids that were sitting side-by-side must stack */
-  .overview-ai-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  /* Catch-all: keep everything inside the viewport */
-  .page * {
-    max-width: 100%;
-    box-sizing: border-box;
   }
 }
