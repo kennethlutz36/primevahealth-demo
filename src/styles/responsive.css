@@ -565,3 +565,24 @@
   /* Belt-and-suspenders: nothing wider than the viewport */
   .page, .topbar { max-width: 100vw; overflow-x: hidden; }
 }
+/* ── Force all content to fit mobile width ────────────────────────── */
+@media (max-width: 768px) {
+  /* Cards and major containers never exceed the screen */
+  .card, .card-sm, .metric-card, .hero-card,
+  .overview-ai-grid, .overview-2col, .today-2col,
+  .page > div {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Grids that were sitting side-by-side must stack */
+  .overview-ai-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Catch-all: keep everything inside the viewport */
+  .page * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
