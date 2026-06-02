@@ -542,18 +542,26 @@
   html, body, #root {
     overflow-x: hidden !important;
     max-width: 100vw !important;
+    position: relative;
   }
 
-  /* Keep the parked drawer from adding page width until opened */
+  /* Parked drawer must not add page width */
   .sidebar-drawer {
     visibility: hidden;
-    left: -300px !important;
+    left: -320px !important;
   }
   .sidebar-drawer.open {
     visibility: visible;
     left: 0 !important;
   }
 
-  /* Stop any stray wide element from forcing the page wider than the screen */
+  /* Floating widgets clamped inside the screen */
+  .ai-widget, .inbox-fab-container {
+    right: 16px !important;
+    left: auto !important;
+    max-width: calc(100vw - 32px);
+  }
+
+  /* Belt-and-suspenders: nothing wider than the viewport */
   .page, .topbar { max-width: 100vw; overflow-x: hidden; }
 }
