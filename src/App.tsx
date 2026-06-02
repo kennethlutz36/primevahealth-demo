@@ -43,19 +43,13 @@ function MobileSidebar({ isOpen, onClose, children }: {
 }) {
   return (
     <>
-      <div
-        className={`mobile-nav-overlay${isOpen ? ' open' : ''}`}
-        onClick={onClose}
-      />
-
-className={`sidebar-drawer${isOpen ? ' open' : ''}`}        <button className="sidebar-close-btn" onClick={onClose}>
+      <div className={`mobile-nav-overlay${isOpen ? ' open' : ''}`} onClick={onClose}/>
+      <div className={`sidebar sidebar-drawer${isOpen ? ' open' : ''}`} style={{ display: 'flex', flexDirection: 'column' }}>
+        <button className="sidebar-close-btn" onClick={onClose} style={{ display: 'flex' }}>
           <Ic n="close" s={14} c={C.muted}/>
         </button>
-
-        <div className="mobile-sidebar-content">
-          {children}
-        </div>
-      </aside>
+        {children}
+      </div>
     </>
   );
 }
