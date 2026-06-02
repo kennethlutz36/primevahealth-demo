@@ -1,0 +1,17 @@
+// ── Mock Protocol Data ────────────────────────────────────────────────
+const PROTO_CATS = [
+  "all","Peptides","Supplements","Nutrition","Exercise","Sleep & Recovery","Labs & Biomarkers"
+];
+
+const PROTO_TEMPLATES = [
+  { id:"metabolic", title:"Metabolic Reset", cat:"Nutrition", catId:"nutrition", duration:"12 weeks", tasks:6, hasEdu:true, hasSourcing:true, hasTracking:true, desc:"A foundational plan focused on protein intake, hydration, meal consistency, movement, and daily accountability.", includes:["Daily check-in","Protein target","Hydration goal","Walking goal","Education assignments","Sourcing recommendations"] },
+  { id:"glp1", title:"GLP-1 Lifestyle Support", cat:"Nutrition", catId:"nutrition", duration:"16 weeks", tasks:7, hasEdu:true, hasSourcing:true, hasTracking:true, desc:"A support protocol for patients needing structure around protein, hydration, GI-friendly meals, resistance training, and consistency.", includes:["Protein education","Hydration reminders","Meal pacing","Supplement support","Check-in schedule","Provider follow-up"] },
+  { id:"supplement", title:"Supplement Foundation", cat:"Supplements", catId:"supplements", duration:"8 weeks", tasks:4, hasEdu:true, hasSourcing:true, hasTracking:true, desc:"A protocol focused on supplement timing, adherence, education, and sourcing quality.", includes:["Supplement schedule","Daily completion tracking","Education module","Sourcing recommendations"] },
+  { id:"sleep", title:"Sleep Optimization", cat:"Sleep & Recovery", catId:"sleep", duration:"8 weeks", tasks:5, hasEdu:true, hasSourcing:true, hasTracking:true, desc:"A protocol focused on evening routines, sleep timing, recovery habits, stress management, and weekly sleep trend review.", includes:["Wind-down task","Caffeine cutoff","Screen routine","Sleep log","Education handout"] },
+  { id:"strength", title:"Strength & Recovery", cat:"Exercise", catId:"exercise", duration:"12 weeks", tasks:6, hasEdu:true, hasSourcing:true, hasTracking:true, desc:"A protocol supporting resistance training consistency, mobility, recovery nutrition, and rest-day habits.", includes:["Workout log","Recovery checklist","Protein target","Hydration goal","Mobility task","Recovery education"] },
+  { id:"labprep", title:"Lab Prep & Monitoring", cat:"Labs & Biomarkers", catId:"labs", duration:"Ongoing", tasks:4, hasEdu:true, hasSourcing:false, hasTracking:true, desc:"A protocol focused on lab prep, baseline biomarker education, follow-up reminders, and provider review workflows.", includes:["Lab prep checklist","Biomarker education","Follow-up reminders","Provider review workflow"] },
+  { id:"peptide", title:"Peptide Education Support", cat:"Peptides", catId:"peptides", duration:"8 weeks", tasks:5, hasEdu:true, hasSourcing:true, hasTracking:false, desc:"A provider-guided education protocol for peptide category education, safety considerations, sourcing quality, and patient understanding.", includes:["Category education","Safety considerations","Sourcing quality guide","Patient Q&A module","Provider check-ins"] },
+  { id:"recovery", title:"Recovery Support", cat:"Sleep & Recovery", catId:"sleep", duration:"8 weeks", tasks:6, hasEdu:true, hasSourcing:true, hasTracking:true, desc:"A recovery-focused protocol supporting hydration, protein intake, sleep, mobility, and provider check-ins.", includes:["Recovery checklist","Mobility reminders","Protein support","Hydration goal","Education handout","Follow-up schedule"] },
+];
+
+export { PROTO_CATS, PROTO_TEMPLATES };
