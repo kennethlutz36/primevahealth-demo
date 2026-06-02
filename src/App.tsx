@@ -13,27 +13,27 @@ import {
 } from './components/shared/modals';
 
 // Provider pages
-import Overview          from './components/provider/Provideroverview';
-import Education         from './components/provider/Providereducationhub';
-import Protocols         from './components/provider/Providerprotocols';
-import Patients          from './components/provider/Providerpatients';
-import PatientProfilePage from './components/provider/Providerpatientprofile';
-import Sourcing          from './components/provider/Providersourcingguide';
-import ClinicHandouts    from './components/provider/Providerclinichandouts';
-import Community         from './components/provider/Providercommunity';
-import StaffTraining     from './components/provider/Providerstafftraining';
-import Reports           from './components/provider/Providerreports';
-import Settings          from './components/provider/Providersettings';
+import Overview          from './components/provider/ProviderOverview';
+import Education         from './components/provider/ProviderEducationHub';
+import Protocols         from './components/provider/ProviderProtocols';
+import Patients          from './components/provider/ProviderPatients';
+import PatientProfilePage from './components/provider/ProviderPatientProfile';
+import Sourcing          from './components/provider/ProviderSourcingGuide';
+import ClinicHandouts    from './components/provider/ProviderClinicHandouts';
+import Community         from './components/provider/ProviderCommunity';
+import StaffTraining     from './components/provider/ProviderStaffTraining';
+import Reports           from './components/provider/ProviderReports';
+import Settings          from './components/provider/ProviderSettings';
 
 // Patient pages
-import PatHome      from './components/patient/Patienthome';
-import PatToday     from './components/patient/Patienttoday';
-import PatProtocol  from './components/patient/Patientmyprotocol';
-import PatEducation from './components/patient/Patienteducation';
-import PatProgress  from './components/patient/Patientprogress';
-import PatSourcing  from './components/patient/Patientsourcing';
-import PatQuestions from './components/patient/Patientquestions';
-import PatProfile   from './components/patient/Patientprofile';
+import PatHome      from './components/patient/PatientHome';
+import PatToday     from './components/patient/PatientToday';
+import PatProtocol  from './components/patient/PatientMyProtocol';
+import PatEducation from './components/patient/PatientEducation';
+import PatProgress  from './components/patient/PatientProgress';
+import PatSourcing  from './components/patient/PatientSourcing';
+import PatQuestions from './components/patient/PatientQuestions';
+import PatProfile   from './components/patient/PatientProfile';
 
 declare global { interface Window { __primeva_modal?: string; } }
 
@@ -43,13 +43,19 @@ function MobileSidebar({ isOpen, onClose, children }: {
 }) {
   return (
     <>
-      <div className={`mobile-nav-overlay${isOpen ? ' open' : ''}`} onClick={onClose}/>
-      <div className={`sidebar sidebar-drawer${isOpen ? ' open' : ''}`} style={{ display: 'flex', flexDirection: 'column' }}>
-        <button className="sidebar-close-btn" onClick={onClose} style={{ display: 'flex' }}>
+      <div
+        className={`mobile-nav-overlay${isOpen ? ' open' : ''}`}
+        onClick={onClose}
+      />
+
+className={`sidebar-drawer${isOpen ? ' open' : ''}`}        <button className="sidebar-close-btn" onClick={onClose}>
           <Ic n="close" s={14} c={C.muted}/>
         </button>
-        {children}
-      </div>
+
+        <div className="mobile-sidebar-content">
+          {children}
+        </div>
+      </aside>
     </>
   );
 }
@@ -159,7 +165,7 @@ export default function App() {
       {/* Main shell */}
       <div style={{ display: 'flex', height: '100vh', paddingTop: 48, background: C.bg }}>
         {/* Desktop sidebar (hidden on mobile via CSS) */}
-        <div className="sidebar-desktop-only" style={{ display: "flex" }}>
+        <div className="sidebar-desktop-only">
           {sidebar}
         </div>
         <div style={{ flex: 1, overflowY: 'auto', height: '100%', minWidth: 0 }}>
