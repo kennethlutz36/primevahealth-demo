@@ -14,7 +14,7 @@ import {
 
 // Provider pages
 import Overview          from './components/provider/Provideroverview';
-import Education         from './components/provider/Providereducationhub';
+import Education         from './components/provider/ProviderEducationHub';
 import Protocols         from './components/provider/Providerprotocols';
 import Patients          from './components/provider/Providerpatients';
 import PatientProfilePage from './components/provider/Providerpatientprofile';
