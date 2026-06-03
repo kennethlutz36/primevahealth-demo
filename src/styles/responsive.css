@@ -451,4 +451,32 @@
   }
 }
 
+/* ══════════════════════════════════════════════════════════════════════
+   MOBILE FIX — collapse inline multi-column grids
+   ══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  [style*="repeat(2,1fr)"],
+  [style*="repeat(3,1fr)"],
+  [style*="repeat(4,1fr)"],
+  [style*="repeat(5,1fr)"],
+  [style*="repeat(6,1fr)"],
+  [style*="repeat(2, 1fr)"],
+  [style*="repeat(3, 1fr)"],
+  [style*="repeat(4, 1fr)"],
+  [style*="repeat(5, 1fr)"],
+  [style*="repeat(6, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
 
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  [style*="grid"] > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  [style*="span 2"] { grid-column: auto !important; }
+}
