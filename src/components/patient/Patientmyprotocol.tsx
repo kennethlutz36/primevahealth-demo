@@ -84,8 +84,8 @@ const PatProtocol = () => {
                 <button style={{background:"rgba(255,255,255,.1)",border:"1px solid rgba(255,255,255,.2)",color:"#fff",borderRadius:9,padding:"6px 16px",fontSize:13,fontWeight:600,cursor:"pointer"}}>View Progress</button>
               </div>
             </div>
-            <div style={{display:"flex",gap:10,flexShrink:0}}>
-              {[["92%","Adherence"],[protocol.phaseWeek,"Current Week"],["6 days","Streak"]].map(([n,l])=>(
+<div className="hero-stats" style={{display:"flex",gap:10,flexShrink:0}}>
+  {[["92%","Adherence"],[protocol.phaseWeek,"Current Week"],["6 days","Streak"]].map(([n,l])=>(
                 <div key={l} style={{textAlign:"center",padding:"12px 16px",background:"rgba(255,255,255,.1)",border:"1px solid rgba(255,255,255,.15)",borderRadius:13}}>
                   <div style={{fontSize:20,fontWeight:800,color:"#fff",letterSpacing:"-.5px",lineHeight:1}}>{n}</div>
                   <div style={{fontSize:10,color:"rgba(255,255,255,.5)",fontWeight:600,marginTop:4,textTransform:"uppercase",letterSpacing:".06em"}}>{l}</div>
