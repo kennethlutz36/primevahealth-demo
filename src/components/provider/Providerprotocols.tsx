@@ -485,8 +485,8 @@ const Protocols = () => {
               <button style={{ background:"rgba(255,255,255,.07)", border:"1px solid rgba(255,255,255,.13)", color:"rgba(255,255,255,.75)", borderRadius:10, padding:"9px 20px", fontSize:13, fontWeight:600, cursor:"pointer" }}>Assign to Patient</button>
             </div>
           </div>
-          <div style={{ display:"flex", gap:12, flexShrink:0 }}>
-            {[["8","Templates"],["12","Categories"],["48","Active Patients"]].map(([n,l]) => (
+<div className="hero-stats" style={{ display:"flex", gap:12, flexShrink:0 }}>
+  {[["8","Templates"],["12","Categories"],["48","Active Patients"]].map(([n,l]) => (
               <div key={l} style={{ textAlign:"center", padding:"14px 18px", background:"rgba(255,255,255,.1)", border:"1px solid rgba(255,255,255,.15)", borderRadius:16 }}>
                 <div style={{ fontSize:26, fontWeight:800, color:"#fff", letterSpacing:"-1px", lineHeight:1 }}>{n}</div>
                 <div style={{ fontSize:10.5, color:"rgba(255,255,255,.5)", fontWeight:600, marginTop:5, textTransform:"uppercase", letterSpacing:".06em" }}>{l}</div>
