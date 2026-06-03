@@ -499,3 +499,13 @@
 @media (max-width: 430px) {
   .quick-action-grid { grid-template-columns: 1fr 1fr !important; }
 }
+/* ── Tab bars must not push the page wide on mobile ──────────────── */
+@media (max-width: 768px) {
+  .tab-bar {
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab { flex-shrink: 0; }
+}
