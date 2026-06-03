@@ -24,8 +24,8 @@ const PatHome = ({ setPage }) => {
             <button onClick={()=>triggerModal("askProvider")} style={{background:"rgba(255,255,255,.07)",border:"1px solid rgba(255,255,255,.13)",color:"rgba(255,255,255,.75)",borderRadius:10,padding:"8px 18px",fontSize:13,fontWeight:600,cursor:"pointer"}}>Ask Provider</button>
           </div>
         </div>
-        <div style={{position:"absolute",right:28,top:"50%",transform:"translateY(-50%)",display:"flex",gap:18}}>
-          {[["92%","Adherence"],["6 days","Streak"],["8.1","Sleep Avg"]].map(([n,l])=>(
+<div className="hero-stats-abs" style={{position:"absolute",right:28,top:"50%",transform:"translateY(-50%)",display:"flex",gap:18}}>
+{[["92%","Adherence"],["6 days","Streak"],["8.1","Sleep Avg"]].map(([n,l])=>(
             <div key={l} style={{textAlign:"center"}}>
               <div style={{fontSize:20,fontWeight:800,color:"#fff",letterSpacing:"-.5px"}}>{n}</div>
               <div style={{fontSize:10,color:"rgba(255,255,255,.5)",fontWeight:600,marginTop:3,textTransform:"uppercase",letterSpacing:".06em"}}>{l}</div>
