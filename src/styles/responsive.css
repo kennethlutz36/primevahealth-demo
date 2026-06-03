@@ -555,3 +555,13 @@
   }
   .save-log-row .btn { flex: 1 1 auto; }
 }
+/* ══════════════════════════════════════════════════════════════════════
+   MOBILE FIX — Today "Quick actions" row must wrap (Save Log was cut off)
+   ══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .quick-actions-row {
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+  }
+  .quick-actions-row .btn { flex: 0 1 auto; }
+}
