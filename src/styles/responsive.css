@@ -509,3 +509,19 @@
   }
   .tab { flex-shrink: 0; }
 }
+
+/* ── Catch-all: any page grid collapses to 1 column on phones ─────── */
+@media (max-width: 768px) {
+  .page [style*="grid"],
+  .page [class*="grid"] {
+    grid-template-columns: 1fr !important;
+    display: grid;
+  }
+  .page [style*="grid"] > *,
+  .page [class*="grid"] > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    grid-column: auto !important;
+    box-sizing: border-box !important;
+  }
+}
