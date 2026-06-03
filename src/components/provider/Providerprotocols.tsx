@@ -79,8 +79,8 @@ const Protocols = () => {
                 <button style={{ background:"rgba(255,255,255,.07)", border:"1px solid rgba(255,255,255,.13)", color:"rgba(255,255,255,.75)", borderRadius:10, padding:"9px 20px", fontSize:13, fontWeight:600, cursor:"pointer" }}>Generate PDF</button>
               </div>
             </div>
-            <div style={{ display:"flex", gap:10, flexShrink:0 }}>
-              {[[p.duration,"Duration"],[p.tasks+" tasks","Daily Actions"],[p.hasEdu?"Included":"—","Education"],[p.hasTracking?"Included":"—","Tracking"]].map(([n,l]) => (
+<div className="hero-stats" style={{ display:"flex", gap:10, flexShrink:0 }}>
+  {[[p.duration,"Duration"],[p.tasks+" tasks","Daily Actions"],[p.hasEdu?"Included":"—","Education"],[p.hasTracking?"Included":"—","Tracking"]].map(([n,l]) => (
                 <div key={l} style={{ textAlign:"center", padding:"12px 16px", background:"rgba(255,255,255,.1)", border:"1px solid rgba(255,255,255,.15)", borderRadius:14 }}>
                   <div style={{ fontSize:15, fontWeight:800, color:"#fff", letterSpacing:"-.3px", lineHeight:1 }}>{n}</div>
                   <div style={{ fontSize:10, color:"rgba(255,255,255,.5)", fontWeight:600, marginTop:5, textTransform:"uppercase", letterSpacing:".06em" }}>{l}</div>
