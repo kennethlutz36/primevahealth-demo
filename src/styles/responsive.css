@@ -110,13 +110,10 @@
   .page { padding: var(--page-py) var(--page-px) 100px; }
   .responsive-grid-4 { grid-template-columns: repeat(2, 1fr); }
 
-  /* Sidebar stays but slightly narrower */
   .sidebar { width: 200px; min-width: 200px; }
 
-  /* Topbar */
   .topbar { padding: 0 20px; }
 
-  /* Modals */
   .modal-inner { max-width: 92vw !important; }
   .ai-drawer   { width: 320px; }
 }
@@ -146,27 +143,21 @@
   .page-title { font-size: var(--title-size) !important; }
   .section-title { font-size: var(--section-size) !important; }
 
-  /* Topbar */
   .topbar { padding: 0 16px; gap: 10px; }
 
-  /* Grids collapse */
   .responsive-grid-4 { grid-template-columns: 1fr 1fr; gap: 10px; }
   .responsive-grid-3 { grid-template-columns: 1fr 1fr; gap: 10px; }
   .responsive-grid-2 { grid-template-columns: 1fr;     gap: 10px; }
 
-  /* Cards */
   .card, .card-sm { border-radius: var(--card-r); padding: var(--card-p); }
   .metric-card    { border-radius: var(--card-r); padding: 16px 18px; }
   .metric-num     { font-size: 26px; }
 
-  /* Page header row stacks on narrow tablet */
   .page-header-row { flex-wrap: wrap; }
   .page-header-row > button { align-self: flex-start; }
 
-  /* Form rows go single column */
   .form-row { grid-template-columns: 1fr !important; gap: 10px; }
 
-  /* Modal sizing */
   .modal-inner {
     width: 95vw !important;
     max-width: 95vw !important;
@@ -177,13 +168,10 @@
     padding: 20px !important;
   }
 
-  /* Drawers */
   .ai-drawer   { width: 300px; right: 0; left: auto; bottom: 66px; }
 
-  /* FAB positioning */
   .ai-widget   { bottom: var(--fab-bottom); right: var(--fab-right); }
 
-  /* Tables — allow horizontal scroll on tablet */
   .table-scroll-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -207,28 +195,23 @@
     --fab-right:   14px;
   }
 
-  /* All grids go single column */
   .responsive-grid-4,
   .responsive-grid-3,
   .responsive-grid-2 { grid-template-columns: 1fr !important; gap: 10px; }
 
-  /* Typography */
   .page-title    { font-size: var(--title-size) !important; letter-spacing: -.3px !important; }
   .page-subtitle { font-size: 13px !important; }
   .section-title { font-size: var(--section-size) !important; margin-bottom: 12px; }
   .metric-num    { font-size: 24px; }
 
-  /* Cards — tighter */
   .card, .card-sm, .metric-card {
     border-radius: var(--card-r);
     padding: var(--card-p);
   }
 
-  /* Buttons — minimum 44px tap target */
   .btn     { min-height: 44px; padding: 10px 16px; font-size: 14px; }
   .btn-sm  { min-height: 38px; padding: 8px 14px;  font-size: 13px; }
 
-  /* Quick Actions row */
   .quick-actions-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -236,16 +219,13 @@
   }
   .quick-actions-row .btn { justify-content: center; }
 
-  /* Today dual-picker cards go full width */
   .dual-picker-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
 
-  /* Form */
   .form-row    { grid-template-columns: 1fr !important; }
-  .form-input  { font-size: 16px !important; } /* Prevent iOS zoom */
+  .form-input  { font-size: 16px !important; }
   .form-input:focus { font-size: 16px !important; }
-  select, input, textarea { font-size: 16px !important; } /* Prevent iOS zoom on all inputs */
+  select, input, textarea { font-size: 16px !important; }
 
-  /* Modal — full-width slide-up sheet on mobile */
   .modal-overlay {
     align-items: flex-end !important;
   }
@@ -259,10 +239,8 @@
     padding: 20px 16px 32px !important;
   }
 
-  /* Floating widgets — stack vertically */
   .ai-widget { bottom: var(--fab-bottom); right: var(--fab-right); }
 
-  /* FAB labels hide on very small screens to save space */
   .fab-label { display: none; }
   .ai-fab, .inbox-fab {
     width: 48px !important;
@@ -272,10 +250,8 @@
     justify-content: center !important;
   }
 
-  /* Inbox floating widget */
   .inbox-fab-container { bottom: calc(var(--fab-bottom) + 62px); right: var(--fab-right); }
 
-  /* AI drawer on mobile */
   .ai-drawer {
     width: calc(100vw - 28px) !important;
     right: 14px !important;
@@ -284,7 +260,6 @@
     max-height: 70vh;
   }
 
-  /* Provider inbox drawer on mobile */
   .inbox-drawer {
     width: calc(100vw - 28px) !important;
     right: 14px !important;
@@ -294,15 +269,12 @@
     overflow-y: auto;
   }
 
-  /* Hero cards — reduce padding */
   .hero-card { padding: 18px 16px !important; }
   .hero-card .stat-chip { padding: 8px 10px !important; }
 
-  /* Biomarker table → card list on mobile */
   .biomarker-table-desktop { display: none !important; }
   .biomarker-cards-mobile  { display: flex !important; flex-direction: column; gap: 8px; }
 
-  /* Tab bars scroll horizontally */
   .tab-bar {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -313,16 +285,13 @@
   }
   .tab { white-space: nowrap; flex-shrink: 0; }
 
-  /* Step bars compress */
   .step-name { display: none; }
   .step-num  { width: 24px; height: 24px; font-size: 11px; }
   .step-divider { margin: 0 4px; }
 
-  /* Sourcing partner cards */
   .sourcing-card-actions { flex-direction: column; gap: 8px; }
   .sourcing-card-actions .btn { width: 100%; justify-content: center; }
 
-  /* Page header row — stack title and button */
   .page-header-row {
     flex-direction: column;
     align-items: stretch;
@@ -330,34 +299,26 @@
   }
   .page-header-row .btn-sm { align-self: flex-start; }
 
-  /* Today protocol action cards */
   .protocol-action-card {
     padding: 12px 14px !important;
   }
-  .protocol-action-why { display: none; } /* hide "why it matters" on very small screens */
+  .protocol-action-why { display: none; }
 
-  /* Logged meal/supplement items */
   .log-item-card { padding: 10px 12px !important; }
 
-  /* Save button — ensure above widget clearance */
   .save-log-row { margin-bottom: 80px; }
 
-  /* Patient profile two-col → single col */
   .patient-profile-grid { grid-template-columns: 1fr !important; }
 
-  /* Provider inbox header compact */
   .inbox-drawer-header { padding: 12px 14px !important; }
 
-  /* Reports metric grid */
   .reports-metric-grid { grid-template-columns: 1fr 1fr !important; gap: 10px; }
 
-  /* Chart bars shrink gracefully */
   .bar-chart { height: 80px; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
    BIOMARKER TABLE RESPONSIVE
-   Desktop: grid table | Mobile: stacked cards
    ══════════════════════════════════════════════════════════════════════ */
 .biomarker-cards-mobile { display: none; }
 
@@ -372,7 +333,7 @@
 .inbox-fab-container {
   position: fixed;
   bottom: 24px;
-  right: 90px;  /* sits left of AI widget which is at right:24px */
+  right: 90px;
   z-index: 999;
 }
 
@@ -380,7 +341,6 @@
   .inbox-fab-container { right: 82px; bottom: 20px; }
 }
 @media (max-width: 430px) {
-  /* Stack inbox above AI on mobile */
   .inbox-fab-container {
     bottom: calc(var(--fab-bottom) + 62px);
     right: var(--fab-right);
@@ -420,7 +380,7 @@
 }
 
 /* ══════════════════════════════════════════════════════════════════════
-   PATIENT TODAY — highest priority mobile page
+   PATIENT TODAY
    ══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .today-2col { grid-template-columns: 1fr !important; }
@@ -444,13 +404,8 @@
    MODALS — full-screen on mobile
    ══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 430px) {
-  /* Step indicator text hide on very narrow */
   .step-bar .step-name { display: none; }
-
-  /* Invite patient multi-step — compress */
   .invite-step { padding: 0; }
-
-  /* Lab upload modal */
   .lab-upload-dropzone { padding: 16px !important; }
 }
 
@@ -485,7 +440,6 @@
 @media (max-width: 768px) {
   .sidebar-desktop-only { display: none !important; }
 
-  /* Show the sidebar's contents when it lives inside the slide-in drawer */
   .sidebar-drawer .sidebar {
     display: flex !important;
     position: static;
@@ -495,4 +449,53 @@
     border-right: none;
     box-shadow: none;
   }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   MOBILE OVERFLOW FIX — stops sideways scrolling on phones
+   ══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  html, body, #root {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  .sidebar-drawer { visibility: hidden; left: -320px !important; }
+  .sidebar-drawer.open { visibility: visible; left: 0 !important; }
+
+  .ai-widget, .inbox-fab-container {
+    right: 16px !important;
+    left: auto !important;
+    max-width: calc(100vw - 32px);
+  }
+
+  .metric-grid,
+  .responsive-grid-4, .responsive-grid-3, .responsive-grid-2,
+  .overview-2col, .overview-ai-grid,
+  .today-2col, .quick-action-grid,
+  .pat-profile-2col, .patient-profile-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .overview-2col > *,
+  .overview-ai-grid > *,
+  .metric-grid > * {
+    grid-column: auto !important;
+  }
+
+  .overview-2col > *,
+  .overview-ai-grid > *,
+  .metric-grid > *,
+  .responsive-grid-4 > *, .responsive-grid-3 > *, .responsive-grid-2 > *,
+  .card, .card-sm, .metric-card, .hero-card {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .page, .topbar { max-width: 100vw !important; box-sizing: border-box; }
+}
+
+@media (max-width: 430px) {
+  .quick-action-grid { grid-template-columns: 1fr 1fr !important; }
 }
