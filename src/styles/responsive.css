@@ -539,3 +539,19 @@
     gap: 18px !important;
   }
 }
+/* ══════════════════════════════════════════════════════════════════════
+   MOBILE FIX — pill/tab rows with width:fit-content must wrap; save rows
+   ══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  [style*="display: flex"][style*="width: fit-content"] {
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .save-log-row {
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+  }
+  .save-log-row .btn { flex: 1 1 auto; }
+}
