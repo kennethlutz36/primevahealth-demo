@@ -516,24 +516,26 @@
   .page *, .fade * { max-width: 100% !important; box-sizing: border-box; }
 }
 /* ══════════════════════════════════════════════════════════════════════
-   MOBILE FIX — hero banners: stack text above stat clusters on phones
+   MOBILE FIX — hero stat clusters stack below the heading (surgical)
    ══════════════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
+  /* The hero text+stats rows are allowed to wrap (gentle, only when needed) */
   [style*="display: flex"][style*="justify-content: space-between"] {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 14px !important;
-  }
-
-  [style*="display: flex"][style*="flex-shrink: 0"] {
     flex-wrap: wrap !important;
-    width: 100% !important;
   }
-
-  [style*="rgba(255,255,255,0.1)"],
-  [style*="rgba(255, 255, 255, 0.1)"],
-  [style*="rgba(255,255,255,.1)"] {
-    flex: 1 1 auto;
-    min-width: 0;
+  /* Tagged hero stat clusters drop onto their own full-width line */
+  .hero-stats {
+    flex-basis: 100% !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    margin-top: 6px;
+  }
+  /* PatientHome's absolutely-positioned stats flow into normal layout */
+  .hero-stats-abs {
+    position: static !important;
+    transform: none !important;
+    margin-top: 14px !important;
+    flex-wrap: wrap !important;
+    gap: 18px !important;
   }
 }
